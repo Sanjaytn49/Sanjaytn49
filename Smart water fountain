@@ -1,0 +1,32 @@
+int led = 13;
+int button = 12;
+
+int ledState = HIGH;
+int buttonCurrent;
+int buttonPrevious = LOW;
+
+void setup() {
+  // put your setup code here, to run once:
+pinMode(button, INPUT);
+pinMode(led, OUTPUT);
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+buttonCurrent = digitalRead(button);
+
+if (buttonCurrent == HIGH && buttonPrevious == LOW)
+{
+if (ledState == HIGH)
+{
+  ledState = LOW;
+}
+else
+{
+  ledState = HIGH;
+}
+}
+digitalWrite(led, ledState);
+
+}
+![water pump picture|690x400](upload://fOBq9lh3PzufUh6ZKsHi1SBb38p.png
